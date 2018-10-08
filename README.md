@@ -1,8 +1,7 @@
 # SiteVariables
+Over the years I have become accustomed to using the Rails `secrets.yml` file as a nice config file for any non-sensitve constant variables I'd like to use throughout my application. With Rails 5.2 `secrets.yml` is now removed in favor of encrypted credentials. Overall this is a good thing as it was bad practice to store and commit any sensitive variables into `secrets.yml`. 
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/site_variables`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This site_variables gems allows me to continue my practice of using a YAML file for evrionment specific non-sensitive variables.
 
 ## Installation
 
@@ -22,13 +21,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+After installation run:
 
-## Development
+    $rails generate site_variables
+    
+This gives us two files:
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+1. `config/initializers/site_variables.rb`
+2. `config/site_variables.yml`
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+The important file is `site_variables.yml` 
+Edit the YAML file with the variables you would like to use. Any environment specific variables (in the `development` or `production` sections for example) will override any variables in the `shared` section.
+
+You now can access your hash of site variables inside your Rails app with the `SITE_VARIABLES` constant.
 
 ## Contributing
 
