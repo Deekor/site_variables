@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    site_variables (1.0.0)
+    site_variables (1.0.1)
 
 GEM
   remote: https://rubygems.org/

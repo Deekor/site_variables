@@ -7,7 +7,7 @@ class SiteVariablesGenerator < Rails::Generators::Base
       "\n\tthing: development version of thing"
     end
     create_file "config/initializers/site_variables.rb" do
-"      variables = YAML.load_file('config/variables.yml')
+"      variables = YAML.load_file('config/site_variables.yml')
 
       SITE_VARIABLES = variables['shared']
 
