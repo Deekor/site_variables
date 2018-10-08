@@ -35,6 +35,29 @@ Edit the YAML file with the variables you would like to use. Any environment spe
 
 You now can access your hash of site variables inside your Rails app with the `SITE_VARIABLES` constant.
 
+### Example
+
+`config/site_variables.yml`:
+
+```
+shared:
+  base_url: this will be overriden by the environments
+  site_name: My Awesome Site
+  support_email: support@myawesomesite.com
+
+development:
+  base_url: https://somengroksubdomain.ngrok.io
+
+production:
+  base_url: https://myawesomesite.com
+```
+
+In a view:
+
+```
+Welcome to <%= SITE_VARIABLES['site_name'] %>
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/site_variables. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
