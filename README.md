@@ -1,7 +1,7 @@
 # SiteVariables
 Over the years I have become accustomed to using the Rails `secrets.yml` file as a nice config file for any non-sensitve constant variables I'd like to use throughout my application. With Rails 5.2 `secrets.yml` is now removed in favor of encrypted credentials. Overall this is a good thing as it was bad practice to store and commit any sensitive variables into `secrets.yml`. 
 
-This site_variables gems allows me to continue my practice of using a YAML file for evrionment specific non-sensitive variables.
+The [site_variables](https://rubygems.org/gems/site_variables) gem allows me to continue my practice of using a YAML file for environment specific non-sensitive variables.
 
 ## Installation
 
